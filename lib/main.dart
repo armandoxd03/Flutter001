@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'homepage_JRCD.dart';
+import 'signup_JRCD.dart';
 void main(){
   runApp(MaterialApp(
     theme: ThemeData(
@@ -78,7 +79,19 @@ class _LoginFormState extends State<LoginForm> {
             SizedBox(height: 20),
             ElevatedButton(onPressed: _handleLogin,
               child: Text('Login'),
-                )
+                ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _navigateTosignUp(context),
+              child: Text('Sign up'),
+            ),  
           ]);
     }
   }
+
+  void _navigateTosignUp(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => SignUpPage()),
+    );
+   }
